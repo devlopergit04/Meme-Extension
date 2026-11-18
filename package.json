@@ -1,0 +1,30 @@
+{
+  "name": "meme-extension",
+  "displayName": "Meme Extension 🎉",
+  "description": "Plays funny success sound effects and memes when your code runs successfully (and sad trombones when it fails).",
+  "version": "1.0.0",
+  "publisher": "devlopergit04",
+  "license": "MIT",
+  "repository": {"type": "git", "url": "https://github.com/devlopergit04/Meme-Extension"},
+  "engines": {"vscode": "^1.85.0"},
+  "categories": ["Other", "Fun"],
+  "keywords": ["meme","sound","fun","success","terminal"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+      {"command": "memeExtension.playSuccess", "title": "Meme: Play Success Sound"},
+      {"command": "memeExtension.playFail", "title": "Meme: Play Fail Sound"},
+      {"command": "memeExtension.toggle", "title": "Meme: Toggle On/Off"}
+    ],
+    "configuration": {
+      "title": "Meme Extension",
+      "properties": {
+        "memeExtension.enabled": {"type": "boolean", "default": true, "description": "Enable meme sounds."},
+        "memeExtension.playOnFailure": {"type": "boolean", "default": true, "description": "Also play a funny sound when code fails."},
+        "memeExtension.showMessages": {"type": "boolean", "default": true, "description": "Show funny success/fail messages."},
+        "memeExtension.volume": {"type": "number", "default": 0.8, "minimum": 0, "maximum": 1, "description": "Volume (0-1)."}
+      }
+    }
+  }
+}
